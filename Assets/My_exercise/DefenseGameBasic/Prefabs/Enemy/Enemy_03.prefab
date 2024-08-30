@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 10296391430716124}
   - component: {fileID: 5996575478469224307}
   - component: {fileID: 8853479433606611454}
-  m_Layer: 0
+  - component: {fileID: 4364476661038513844}
+  m_Layer: 7
   m_Name: Weapon
-  m_TagString: Untagged
+  m_TagString: EnemyWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1470101795595910280}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.03, y: 0.19, z: 0}
+  m_LocalPosition: {x: -1.06, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -94,7 +95,19 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.2
+--- !u!114 &4364476661038513844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470101795595910280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d188bf090c5054fb40f57545099916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2844952634451683976
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,9 +121,10 @@ GameObject:
   - component: {fileID: 3401578741141755934}
   - component: {fileID: -1150847744158088246}
   - component: {fileID: 642885452817687920}
-  m_Layer: 0
+  - component: {fileID: 2486712184620410768}
+  m_Layer: 7
   m_Name: Enemy_03
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,9 +183,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -517481943
+  m_SortingLayer: -1
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: dd7156c425d04554a95476a10567b5a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -276,3 +290,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5095139, y: 2.5061967}
   m_EdgeRadius: 0
+--- !u!114 &2486712184620410768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844952634451683976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24fe5164661e89d4f9661c6eae4378bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  atkDistance: 1.8

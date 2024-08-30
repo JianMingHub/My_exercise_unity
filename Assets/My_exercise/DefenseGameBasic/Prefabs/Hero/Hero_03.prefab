@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7264994065561734746}
   - component: {fileID: 7028365044068705899}
   - component: {fileID: 8959111053236267975}
-  m_Layer: 0
+  - component: {fileID: 8371890986135938815}
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,6 +96,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
+--- !u!114 &8371890986135938815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2555205758787703230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56d188bf090c5054fb40f57545099916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4265849602203003863
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,9 +121,10 @@ GameObject:
   - component: {fileID: 9125944068429801157}
   - component: {fileID: 1803921751319731330}
   - component: {fileID: -4063738132063588793}
-  m_Layer: 0
+  - component: {fileID: 5872835435928637283}
+  m_Layer: 6
   m_Name: Hero_03
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,8 +183,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -517481943
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e38612cc846a6464c8b664dab95774ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -276,3 +290,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.422858, y: 2.350726}
   m_EdgeRadius: 0
+--- !u!114 &5872835435928637283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4265849602203003863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f542be93677fc46907dad18fb75ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atkRate: 0
