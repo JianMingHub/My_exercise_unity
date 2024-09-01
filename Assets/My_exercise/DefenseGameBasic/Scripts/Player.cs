@@ -32,7 +32,7 @@ namespace COHENLI.DefenseBasic
 
             if(Input.GetMouseButtonDown(0) && !m_isAttacked)
             {
-                Debug.Log("Player clicked mouse button");
+                // Debug.Log("Player clicked mouse button");
                 m_amin.SetBool(Const.ATTACK_ANIM, true);
                 m_isAttacked = true;    // sau khi tấn công xong thì chuyển sang true
             }

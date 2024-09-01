@@ -8,6 +8,9 @@ namespace COHENLI.DefenseBasic
     {
         public float speed;
         public float atkDistance;
+        public int minCoinBonus;
+        public int maxCoinBonus;
+
         private Rigidbody2D m_rb;
         private Animator m_amin;
         private Player m_player;
@@ -29,7 +32,7 @@ namespace COHENLI.DefenseBasic
         }
         public bool IsComponentsNull()
         {
-            return m_rb == null || m_amin == null || m_player == null;
+            return m_rb == null || m_amin == null || m_player == null || m_gm == null;
         }
 
         // Update is called once per frame
@@ -62,8 +65,13 @@ namespace COHENLI.DefenseBasic
             m_amin.SetTrigger(Const.DEAD_ANIM);
             m_rb.velocity = Vector2.zero;
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
-            if (m_gm)
-                m_gm.Score++;
+            
+            m_gm.Score++;
+            
+            int coinBonus = Random.Range(minCoinBonus, maxCoinBonus);
+            Debug.Log(coinBonus);
+            Pref.coins += coinBonus;
+            
             Destroy(gameObject,2f);
         }
     }
