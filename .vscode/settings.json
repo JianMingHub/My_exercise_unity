@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "my_exercise_unity.sln"
+    "dotnet.defaultSolution": "My_exercise.sln"
 }
