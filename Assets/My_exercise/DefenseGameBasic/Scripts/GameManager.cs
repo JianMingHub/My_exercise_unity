@@ -34,6 +34,7 @@ namespace COHENLI.DefenseBasic
         public void GameOver()
         {
             if (m_isGameOver) return;
+            
             m_isGameOver = true;
             Pref.bestScore = m_score;
 

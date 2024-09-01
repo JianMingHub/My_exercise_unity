@@ -24,7 +24,16 @@ namespace COHENLI.DefenseBasic
         }
         public void QuitGame()
         {
-            Application.Quit();
+            if (Application.isEditor)
+            {
+                // Exit Play Mode in Unity Editor
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+            else
+            {
+                // Exit the application during the build
+                Application.Quit();
+            }
         }
     }
 }
