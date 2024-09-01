@@ -67,10 +67,15 @@ namespace COHENLI.DefenseBasic
             gameObject.layer = LayerMask.NameToLayer(Const.DEAD_ANIM);
             
             m_gm.Score++;
-            
+
+            // create random coin, when enemy die
             int coinBonus = Random.Range(minCoinBonus, maxCoinBonus);
-            Debug.Log(coinBonus);
             Pref.coins += coinBonus;
+            // Debug.Log(coinBonus);
+
+            // update coin on game GUI, when player kill enemy
+            if (m_gm.guiMng)
+                m_gm.guiMng.UpdateGameplayCoins();
             
             Destroy(gameObject,2f);
         }

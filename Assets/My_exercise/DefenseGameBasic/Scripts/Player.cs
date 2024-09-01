@@ -11,10 +11,12 @@ namespace COHENLI.DefenseBasic
         private float m_curAtkRate;
         private bool m_isAttacked;
         private bool m_isDead;
+        private GameManager m_gm;
 
         private void Awake() {
             m_amin = GetComponent<Animator>();
             m_curAtkRate = atkRate;
+            m_gm = FindObjectOfType<GameManager>();
         }
         // Start is called before the first frame update
         void Start()
@@ -23,7 +25,7 @@ namespace COHENLI.DefenseBasic
         }
         public bool IsComponentsNull()
         {
-            return m_amin == null;
+            return m_amin == null || m_gm == null;
         }
         // Update is called once per frame
         void Update()
@@ -63,6 +65,7 @@ namespace COHENLI.DefenseBasic
                 m_amin.SetTrigger(Const.DEAD_ANIM);
                 m_isDead = true;                                                        // bật sang true, đã chết
                 gameObject.layer = LayerMask.NameToLayer(Const.DEAD_LAYER);             // change status layer for player to dead
+                m_gm.GameOver();
             }
         }
     }

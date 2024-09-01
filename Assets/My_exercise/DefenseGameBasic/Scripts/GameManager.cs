@@ -4,18 +4,41 @@ using UnityEngine;
 
 namespace COHENLI.DefenseBasic
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : MonoBehaviour, IComponentChecking
     {
         public float spawnTime;         // time to spawn
         public Enemy[] enemyPrefabs;    // list of enemy
         private bool m_isGameOver;      // check if game is over
         private int m_score;            // score of the player
         public int Score { get => m_score; set => m_score = value; }            // get set by player
+        public GUIManager guiMng;
         
         // Start is called before the first frame update
         void Start()
         {
+            if (IsComponentsNull()) return;
+            guiMng.ShowGameGUI(false);
+            guiMng.UpdateMainCoins();
+        }
+        public bool IsComponentsNull()
+        {
+            return guiMng == null;
+        }
+        public void PlayGame()
+        {
+            if(IsComponentsNull()) return;
             StartCoroutine(SpawnEnemy());
+            guiMng.ShowGameGUI(true);
+            guiMng.UpdateGameplayCoins();
+        }
+        public void GameOver()
+        {
+            if (m_isGameOver) return;
+            m_isGameOver = true;
+            Pref.bestScore = m_score;
+
+            if(guiMng.gameoverDialog)
+                guiMng.gameoverDialog.Show(true);
         }
         IEnumerator SpawnEnemy()
         {
