@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Dialog : MonoBehaviour
+namespace COHENLI.DefenseBasic
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Dialog : MonoBehaviour
     {
-        
-    }
+        public Text titleTxt;
+        public Text contentTxt;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public virtual void Show(bool isShow)
+        {
+            gameObject.SetActive(isShow);
+        }
+        public virtual void UpdateDialog(string title, string content)
+        {
+            if (titleTxt)
+                titleTxt.text = title;
+            if (contentTxt)
+                contentTxt.text = content;
+        }
+        public virtual void UpdateDialog()
+        {
+
+        }
+        public virtual void Close()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
+
